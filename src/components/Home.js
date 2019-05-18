@@ -27,46 +27,31 @@ export default class Home extends Component {
               onPress={ this.clique }
             >
               <Image source={require('../images/first-aid.png')}  />
-              <Text>Primeiros Socorros</Text>
+              <Text style={styles.textButton}>Primeiros Socorros</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/phone-call.png')}  />
-              <Text>Chamar 193</Text>
+              <Text style={styles.textButton}>Chamar 193</Text>
             </TouchableOpacity>
           </View>
           <View>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/fire.png')}  />
-              <Text>Incêndio</Text>
+              <Text style={styles.textButton}>Incêndio</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/ambulance.png')}  />
-              <Text>Ambulância</Text>
+              <Text style={styles.textButton}>Ambulância</Text>
             </TouchableOpacity>
           </View>
           <View>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/heartbeat.png')}  />
-              <Text>Hospitais Próximos</Text>
+              <Text style={styles.textButton}>Hospitais Próximos</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/car-crash.png')}  />
-              <Text>Acidente</Text>
+              <Text style={styles.textButton}>Acidente</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -88,7 +73,7 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "gray"
+    backgroundColor: "white"
   },
   titleTop : {
     backgroundColor: "red"
@@ -104,8 +89,13 @@ const styles = StyleSheet.create({
   },
   mainButton: {
     backgroundColor: "red",
+    textAlign: "center",
+    padding: 15   
+  },
+  textButton: {
     color: "white",
     fontFamily: "Arial",
-    fontSize: 10
+    fontSize: 14,
+    fontWeight: "bold"
   }
 });
