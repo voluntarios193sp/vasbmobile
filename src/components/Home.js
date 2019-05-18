@@ -85,12 +85,17 @@ const styles = StyleSheet.create({
     backgroundColor: "gray"
   },
   containerBody: {
-    backgroundColor: "white"
+    backgroundColor: "white",
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "flex-start"
   },
   mainButton: {
     backgroundColor: "red",
     textAlign: "center",
-    padding: 15   
+    padding: 15,
+    width: "100%"   
   },
   textButton: {
     color: "white",
