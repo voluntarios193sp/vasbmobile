@@ -15,12 +15,12 @@ export default class Home extends Component {
             <Text>CORPO DE BOMBEIROS</Text>
             <Image source={require('../images/logo1x.png')}  />          
           </View>
-          <View>
+          <View style={styles.userBox}>
             <Text>Olá, Cicerelli</Text>
             <Switch /><Text>Disponível</Text>
           </View>
         </View>
-        <ScrollView>
+        <ScrollView style={styles.containerBody}>
           <View>
             <TouchableOpacity
               style={styles.mainButton}
@@ -77,21 +77,18 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-    flexDirection: "column"
+    backgroundColor: "gray"
   },
   titleTop : {
     backgroundColor: "red"
+  },
+  userBox : {
+    backgroundColor: "gray"
   },
   containerTop: {
     backgroundColor: "gray"
   },
   containerBody: {
-    flex: 2,
-    flexDirection: "row",
     backgroundColor: "white"
   },
   mainButton: {
