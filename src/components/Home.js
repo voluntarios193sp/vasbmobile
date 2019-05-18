@@ -12,20 +12,18 @@ export default class Home extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.containerTop}>
           <View style={styles.titleTop}>
-            <Text>CORPO DE BOMBEIROS</Text>
-            <Image source={require('../images/logo1x.png')}  />          
+            <Text style={styles.titleTopText}>CORPO DE BOMBEIROS</Text>
+            <Image style={styles.imageLogo} source={require('../images/logo1x.png')}  />          
           </View>
           <View style={styles.userBox}>
-            <Text>Olá, Cicerelli</Text>
-            <Switch /><Text>Disponível</Text>
+            <Text style={[styles.textButton, {marginLeft: 15}]}>Olá, Cicerelli</Text>
+            <View style={styles.availableBox}>
+              <Switch /><Text style={styles.textButton}>Disponível</Text>
+            </View>            
           </View>
         </View>
         <View style={styles.containerBody}>
-          <View>
-            <TouchableOpacity
-              style={styles.mainButton}
-              onPress={ this.clique }
-            >
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/first-aid.png')}  />
               <Text style={styles.textButton}>Primeiros Socorros</Text>
             </TouchableOpacity>
@@ -33,8 +31,6 @@ export default class Home extends Component {
               <Image source={require('../images/phone-call.png')}  />
               <Text style={styles.textButton}>Chamar 193</Text>
             </TouchableOpacity>
-          </View>
-          <View>
             <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/fire.png')}  />
               <Text style={styles.textButton}>Incêndio</Text>
@@ -43,8 +39,6 @@ export default class Home extends Component {
               <Image source={require('../images/ambulance.png')}  />
               <Text style={styles.textButton}>Ambulância</Text>
             </TouchableOpacity>
-          </View>
-          <View>
             <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
               <Image source={require('../images/heartbeat.png')}  />
               <Text style={styles.textButton}>Hospitais Próximos</Text>
@@ -53,7 +47,14 @@ export default class Home extends Component {
               <Image source={require('../images/car-crash.png')}  />
               <Text style={styles.textButton}>Acidente</Text>
             </TouchableOpacity>
-          </View>
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+              <Image source={require('../images/doacao.png')}  />
+              <Text style={styles.textButton}>Doações</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+              <Image source={require('../images/info-circle.png')}  />
+              <Text style={styles.textButton}>Informação</Text>
+            </TouchableOpacity>
         </View>
         <View style={styles.bottomBox}>
           <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
@@ -72,30 +73,61 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+  imageLogo: {
+    flexShrink: 10,
+    resizeMode: 'contain', 
+    width: 90,
+    height: 90
+  },
   container: {
     backgroundColor: "white"
   },
   titleTop : {
-    backgroundColor: "red"
+    flexDirection: "row",
+    flexWrap: "nowrap",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "black",
+    paddingTop: 20,
+    paddingBottom: 20
+  },
+  titleTopText : {
+    fontFamily: "Arial",
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white",   
   },
   userBox : {
-    backgroundColor: "gray"
+    backgroundColor: "gray",
+    flexDirection: "row",
+    flexWrap: "nowrap",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  availableBox: {
+    flexDirection: "row",
+    flexWrap: "nowrap",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    padding: 15
   },
   containerTop: {
     backgroundColor: "gray"
   },
   containerBody: {
-    backgroundColor: "white",
-    flex: 1,
+    backgroundColor: "white",    
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "flex-start"
+    alignItems: "center",
+    justifyContent: "space-around"
   },
   mainButton: {
     backgroundColor: "red",
     textAlign: "center",
+    alignItems: "center",
     padding: 15,
-    width: "100%"   
+    margin: 10,
+    width: "40%"   
   },
   textButton: {
     color: "white",
