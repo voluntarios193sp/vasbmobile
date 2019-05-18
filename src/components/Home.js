@@ -56,13 +56,13 @@ export default class Home extends Component {
           </View>
         </View>
         <View style={styles.bottomBox}>
-          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
             <Image source={require('../images/profile.png')}  />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
             <Image source={require('../images/calendar.png')}  />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
             <Image source={require('../images/chat.png')}  />
           </TouchableOpacity>
         </View>
@@ -102,5 +102,16 @@ const styles = StyleSheet.create({
     fontFamily: "Arial",
     fontSize: 14,
     fontWeight: "bold"
-  }
+  },
+  bottomBox : {
+    flex: 1,
+    justifyContent: "space-around",
+    flexDirection: "row",    
+    alignItems: "flex-start",
+    backgroundColor: "#333",
+    padding: 20    
+  },
+  bottomButton: {    
+    justifyContent: "center"
+  },
 });
