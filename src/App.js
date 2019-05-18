@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Splash from "./components/Splash";
 import Home from './components/Home';
 
@@ -7,7 +6,7 @@ export default class App extends Component {
 
   state = {
     activeWindow : "SPLASH",
-    remainingSeconds: 3
+    remainingSeconds: 1
   }
 
   changeWindow = (windowName) => {
@@ -49,12 +48,3 @@ export default class App extends Component {
     }    
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
-});

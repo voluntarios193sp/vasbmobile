@@ -9,7 +9,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.containerTop}>
           <View style={styles.titleTop}>
             <Text>CORPO DE BOMBEIROS</Text>
@@ -20,7 +20,7 @@ export default class Home extends Component {
             <Switch /><Text>Disponível</Text>
           </View>
         </View>
-        <ScrollView style={styles.containerBody}>
+        <View style={styles.containerBody}>
           <View>
             <TouchableOpacity
               style={styles.mainButton}
@@ -69,8 +69,19 @@ export default class Home extends Component {
               <Text>Acidente</Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
-      </View>
+        </View>
+        <View style={styles.bottomBox}>
+          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+            <Image source={require('../images/profile.png')}  />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+            <Image source={require('../images/calendar.png')}  />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+            <Image source={require('../images/chat.png')}  />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     );
   }
 }
