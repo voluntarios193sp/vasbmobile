@@ -41,7 +41,7 @@ const MainNavigator = createStackNavigator({
     headerTitleStyle: {
       fontWeight: 'bold',
       fontFamily: "Arial",
-      fontSize: 24
+      fontSize: 16
     },
   }
 }
