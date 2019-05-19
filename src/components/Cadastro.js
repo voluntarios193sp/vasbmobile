@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, KeyboardAvoidingView, Text, View, TextInput } from "react-native";
+import { ScrollView, StyleSheet, KeyboardAvoidingView, Text, View, TextInput } from "react-native";
+import DatePicker from 'react-native-datepicker';
 import Cabecalho from "./genericos/Cabecalho";
 import TituloTela from "./genericos/TituloTela";
 import Rodape from "./genericos/Rodape";
@@ -27,9 +28,7 @@ export default class Cadastro extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "flex-start",
+  container: {    
     backgroundColor: "white",   
   },
   lineFormElements : {

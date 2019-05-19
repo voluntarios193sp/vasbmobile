@@ -7,7 +7,7 @@ import Rodape from "./genericos/Rodape";
 export default class Home extends Component {
 
   static propTypes = {
-    changeWindow: PropTypes.func.isRequired
+    fnChangeWindow: PropTypes.func.isRequired
   };
 
   clique = () => {
@@ -55,7 +55,7 @@ export default class Home extends Component {
               <Image source={require('../images/doacao.png')}  />
               <Text style={styles.textButton}>Doações</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
+            <TouchableOpacity style={styles.mainButton} onPress={ this.props.fnChangeWindow("CADASTRO") }>
               <Image source={require('../images/info-circle.png')}  />
               <Text style={styles.textButton}>Informação</Text>
             </TouchableOpacity>

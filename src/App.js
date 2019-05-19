@@ -44,7 +44,7 @@ export default class App extends Component {
     }
     if (this.state.activeWindow === "HOME") {
       return (
-        <Home changeWindow={this.changeWindow} />
+        <Home fnChangeWindow={this.changeWindow} />
       )
     }
     if (this.state.activeWindow === "CADASTRO") {
