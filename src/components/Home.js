@@ -17,6 +17,11 @@ export default class Home extends Component {
     return this.props.navigation.navigate(page, { });
   }
 
+  abreCadastro = () => {
+    console.log("Clique abreCadastro");
+    this.props.fnChangeWindow("CADASTRO");
+  }
+
   render() {
     return (
       <ScrollView style={styles.container}>
