@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
   imageLogo: {
     flexShrink: 10,
     resizeMode: 'contain', 
-    width: 90,
-    height: 90
+    width: 60,
+    height: 60
   },
   titleTop : {
     flexDirection: "row",
