@@ -10,9 +10,9 @@ export default class Splash extends Component {
   }
 
   _verificaCadastro = () => {
-    const dadosUsuario = "Cicerelli 2";
+    // const dadosUsuario = "Cicerelli 2";
     console.log("_novocadastro", this.props)
-    //  const dadosUsuario = null;
+    const dadosUsuario = null;
     if (!dadosUsuario) {      
       this.props.navigation.navigate('NovoUser')
     } else {

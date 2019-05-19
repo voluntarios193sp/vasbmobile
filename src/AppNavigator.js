@@ -3,6 +3,8 @@ import { useScreens } from 'react-native-screens';
 
 import Splash from "./components/Splash";
 import Home from './components/Home';
+
+import ValidaVASB from './components/ValidaVASB'
 import Cadastro from "./components/Cadastro";
 import CadastroObrigado from "./components/CadastroObrigado";
 
@@ -32,11 +34,12 @@ const defaultNavigationOptionsStyle = {
 }
 
 const CadastroNav = createStackNavigator({
+    Validacao: { screen: ValidaVASB},
     Cadastro: { screen: Cadastro },
     CadastroObrigado: { screen: CadastroObrigado },
   },
   {
-    initialRouteName: 'Cadastro',
+    initialRouteName: 'Validacao',
     defaultNavigationOptions: defaultNavigationOptionsStyle
   }
 )

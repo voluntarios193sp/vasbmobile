@@ -10,7 +10,7 @@ export default class TituloTela extends Component {
   render() {
     return (
       <View style={styles.userBox}>
-        <Text style={[styles.textButton, {marginLeft: 15}]}>{this.props.titulo}</Text>                
+        <Text style={[styles.textTitle, {marginLeft: 15}]}>{this.props.titulo}</Text>                
       </View>
     );
   }
@@ -21,13 +21,15 @@ const styles = StyleSheet.create({
     backgroundColor: "gray",
     flexDirection: "row",
     flexWrap: "nowrap",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center"
   },
-  text: {
+  textTitle: {
     color: "white",
     fontFamily: "Arial",
     fontSize: 24,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingTop:15,
+    paddingBottom: 15
   },
 });
