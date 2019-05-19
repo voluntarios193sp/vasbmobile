@@ -11,9 +11,10 @@ export default class App extends Component {
   };
 
   changeWindow = (windowName) => {
+    console.log("changeWindow ", windowName);
     this.setState({
       activeWindow : windowName
-    })
+    });
   };
 
   componentDidMount() {

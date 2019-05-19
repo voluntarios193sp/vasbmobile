@@ -14,6 +14,11 @@ export default class Home extends Component {
     console.log("Clique recebido");
   }
 
+  abreCadastro = () => {
+    console.log("Clique abreCadastro");
+    this.props.fnChangeWindow("CADASTRO");
+  }
+
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -55,7 +60,7 @@ export default class Home extends Component {
               <Image source={require('../images/doacao.png')}  />
               <Text style={styles.textButton}>Doações</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.props.fnChangeWindow("CADASTRO") }>
+            <TouchableOpacity style={styles.mainButton} onPress={ this.abreCadastro }>
               <Image source={require('../images/info-circle.png')}  />
               <Text style={styles.textButton}>Informação</Text>
             </TouchableOpacity>
