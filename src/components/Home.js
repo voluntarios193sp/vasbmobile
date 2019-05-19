@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { StyleSheet, Switch, ScrollView, Text, View, TouchableOpacity } from "react-native";
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import LogoTitle from "./genericos/LogoTitle";
 
 export default class Home extends Component {
+
+  state = {
+    dadosUsuario: null
+  } 
 
   static navigationOptions = {
     headerTitle: "CORPO DE BOMBEIROS",
@@ -16,12 +21,27 @@ export default class Home extends Component {
     return this.props.navigation.navigate(page, { });
   }  
 
+  async componentDidMount() {
+    try {
+      const value = await AsyncStorage.getItem('dadosUsuario')
+      this.setState({
+        dadosUsuario : value
+      })
+    } catch(e) {
+      console.error("componentDidMount error ", e)
+      this.setState({
+        dadosUsuario : "Jose Da Silva"
+      })
+    }
+  }
+
   render() {
+
     return (
       <ScrollView style={styles.container}>
         <View style={styles.containerTop}>
           <View style={styles.userBox}>
-            <Text style={[styles.textButton, {marginLeft: 15}]}>Olá, Cicerelli</Text>
+            <Text style={[styles.textButton, {marginLeft: 15}]}>Olá, {this.state.dadosUsuario}</Text>
             <View style={styles.availableBox}>
               <Switch /><Text style={styles.textButton}>Disponível</Text>
             </View>            
