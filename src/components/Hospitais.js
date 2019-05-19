@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-
 import LogoTitle from "./genericos/LogoTitle";
 
-export default class EmergenciaIncendio extends Component {
+export default class Hospitais extends Component {
 
   static navigationOptions = {
     headerTitle: "CORPO DE BOMBEIROS",
@@ -13,7 +12,7 @@ export default class EmergenciaIncendio extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>EmergenciaIncendio</Text>
+        <Text>Hospitais</Text>
       </View>
     );
   }

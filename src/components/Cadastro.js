@@ -1,15 +1,22 @@
 import React, { Component } from "react";
 import { ScrollView, StyleSheet, KeyboardAvoidingView, Text, View, TextInput } from "react-native";
 import DatePicker from 'react-native-datepicker';
-import Cabecalho from "./genericos/Cabecalho";
+// import Cabecalho from "./genericos/Cabecalho";
 import TituloTela from "./genericos/TituloTela";
-import Rodape from "./genericos/Rodape";
+import LogoTitle from "./genericos/LogoTitle";
+// import Rodape from "./genericos/Rodape";
 
 export default class Cadastro extends Component {
+
+  static navigationOptions = {
+    headerTitle: "CORPO DE BOMBEIROS",
+    headerRight: <LogoTitle />
+  };
+
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Cabecalho />
+        {/* <Cabecalho /> */}
         <TituloTela titulo="Cadastro Inicial" />
         <KeyboardAvoidingView behavior="padding" enabled>
           <View style={styles.lineFormElements}>
@@ -21,7 +28,7 @@ export default class Cadastro extends Component {
             <DatePicker mode="date" format="DD/MM/YYYY" minDate="01/01/1940" maxDate="31/12/2001" />
           </View>
         </KeyboardAvoidingView>
-        <Rodape />
+        {/* <Rodape /> */}
       </ScrollView>
     );
   }

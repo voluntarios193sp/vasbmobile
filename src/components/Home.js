@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import { StyleSheet, Image, Switch, ScrollView, Text, View, TouchableOpacity } from "react-native";
-import Cabecalho from "./genericos/Cabecalho";
-import { PropTypes } from 'prop-types';
-import Rodape from "./genericos/Rodape";
+import { StyleSheet, Switch, ScrollView, Text, View, TouchableOpacity } from "react-native";
+
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import LogoTitle from "./genericos/LogoTitle";
 
 export default class Home extends Component {
 
-  static propTypes = {
-    fnChangeWindow: PropTypes.func.isRequired
+  static navigationOptions = {
+    headerTitle: "CORPO DE BOMBEIROS",
+    headerRight: <LogoTitle />
   };
 
-  clique = () => {
-    console.log("Clique recebido");
+  clique = (page) => {
+    console.log('Clique recebido ' + page);
+
+    return this.props.navigation.navigate(page, { });
   }
 
   render() {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.containerTop}>
-          <Cabecalho />
           <View style={styles.userBox}>
             <Text style={[styles.textButton, {marginLeft: 15}]}>Olá, Cicerelli</Text>
             <View style={styles.availableBox}>
@@ -26,41 +28,48 @@ export default class Home extends Component {
             </View>            
           </View>
         </View>
-        <View style={styles.containerBody}>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/first-aid.png')}  />
+        <View style={styles.containerBody}>        
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('PrimeirosSocorros') } }>
+              <Icon name="first-aid" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Primeiros Socorros</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/phone-call.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Incendio') } }>
+              <Icon name="phone-volume" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Chamar 193</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/fire.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Incendio') } }>
+              <Icon name="fire" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Incêndio</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/ambulance.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Emergencia') } }>
+              <Icon name="ambulance" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Ambulância</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/heartbeat.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Hospitais') } }>
+              <Icon name="heartbeat" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Hospitais Próximos</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/car-crash.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Emergencia') } }>
+              <Icon name="car-crash" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Acidente</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.clique }>
-              <Image source={require('../images/doacao.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Perfil') } }>
+              <Icon name="id-card" color="rgba(255, 255, 255, 1)" size={90} />
+              <Text style={styles.textButton}>Meu Perfil</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Calendario') } }>
+              <Icon name="calendar-alt" color="rgba(255, 255, 255, 1)" size={90} />
+              <Text style={styles.textButton}>Calendario</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Doacao') } }>
+              <Icon name="hand-holding-usd" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Doações</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ this.props.fnChangeWindow("CADASTRO") }>
-              <Image source={require('../images/info-circle.png')}  />
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Informacao') } }>
+              <Icon name="info-circle" color="rgba(255, 255, 255, 1)" size={90} />
               <Text style={styles.textButton}>Informação</Text>
             </TouchableOpacity>
         </View>        
-        <Rodape />
       </ScrollView>
     );
   }
@@ -99,9 +108,9 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     textAlign: "center",
     alignItems: "center",
-    padding: 15,
-    margin: 10,
-    width: "40%"   
+    padding: 0,
+    marginBottom: 10,
+    width: "48%"   
   },
   textButton: {
     color: "white",

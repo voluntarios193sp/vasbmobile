@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import Splash from "./components/Splash";
-import Home from './components/Home';
-import Cadastro from "./components/Cadastro";
+import AppNavigator from './AppNavigator';
 
 export default class App extends Component {
 
+  render() {
+    return (
+      <AppNavigator/>
+    )
+  }
+
+  /*
   state = {
     activeWindow : "SPLASH",
     remainingSeconds: 1
@@ -53,4 +58,5 @@ export default class App extends Component {
       )
     }        
   };
+  */
 }
