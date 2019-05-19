@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, Image, Switch, ScrollView, Text, View, TouchableOpacity } from "react-native";
+import Cabecalho from "./genericos/Cabecalho";
+import { PropTypes } from 'prop-types';
+import Rodape from "./genericos/Rodape";
 
 export default class Home extends Component {
+
+  static propTypes = {
+    changeWindow: PropTypes.func.isRequired
+  };
 
   clique = () => {
     console.log("Clique recebido");
@@ -11,10 +18,7 @@ export default class Home extends Component {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.containerTop}>
-          <View style={styles.titleTop}>
-            <Text style={styles.titleTopText}>CORPO DE BOMBEIROS</Text>
-            <Image style={styles.imageLogo} source={require('../images/logo1x.png')}  />          
-          </View>
+          <Cabecalho />
           <View style={styles.userBox}>
             <Text style={[styles.textButton, {marginLeft: 15}]}>Olá, Cicerelli</Text>
             <View style={styles.availableBox}>
@@ -55,48 +59,18 @@ export default class Home extends Component {
               <Image source={require('../images/info-circle.png')}  />
               <Text style={styles.textButton}>Informação</Text>
             </TouchableOpacity>
-        </View>
-        <View style={styles.bottomBox}>
-          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
-            <Image source={require('../images/profile.png')}  />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
-            <Image source={require('../images/calendar.png')}  />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.bottomButton} onPress={ this.clique }>
-            <Image source={require('../images/chat.png')}  />
-          </TouchableOpacity>
-        </View>
+        </View>        
+        <Rodape />
       </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  imageLogo: {
-    flexShrink: 10,
-    resizeMode: 'contain', 
-    width: 90,
-    height: 90
-  },
+  
   container: {
     backgroundColor: "white"
-  },
-  titleTop : {
-    flexDirection: "row",
-    flexWrap: "nowrap",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "black",
-    paddingTop: 20,
-    paddingBottom: 20
-  },
-  titleTopText : {
-    fontFamily: "Arial",
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "white",   
-  },
+  },  
   userBox : {
     backgroundColor: "gray",
     flexDirection: "row",
@@ -134,16 +108,5 @@ const styles = StyleSheet.create({
     fontFamily: "Arial",
     fontSize: 14,
     fontWeight: "bold"
-  },
-  bottomBox : {
-    flex: 1,
-    justifyContent: "space-around",
-    flexDirection: "row",    
-    alignItems: "flex-start",
-    backgroundColor: "#333",
-    padding: 20    
-  },
-  bottomButton: {    
-    justifyContent: "center"
-  },
+  }
 });

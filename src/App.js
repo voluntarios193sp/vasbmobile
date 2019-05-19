@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import Splash from "./components/Splash";
 import Home from './components/Home';
+import Cadastro from "./components/Cadastro";
 
 export default class App extends Component {
 
   state = {
     activeWindow : "SPLASH",
     remainingSeconds: 1
-  }
+  };
 
   changeWindow = (windowName) => {
     this.setState({
       activeWindow : windowName
     })
-  }
+  };
 
   componentDidMount() {
     this.intervalId = setInterval( () => {
@@ -29,11 +30,11 @@ export default class App extends Component {
         }
       );
     }, 1000);
-  }
+  };
 
   componentWillMount() {
     clearInterval(this.intervalId);
-  }
+  };
 
   render() {
     if (this.state.activeWindow === "SPLASH") {
@@ -43,8 +44,13 @@ export default class App extends Component {
     }
     if (this.state.activeWindow === "HOME") {
       return (
-        <Home />
+        <Home changeWindow={this.changeWindow} />
       )
-    }    
-  }
+    }
+    if (this.state.activeWindow === "CADASTRO") {
+      return (
+        <Cadastro />
+      )
+    }        
+  };
 }
