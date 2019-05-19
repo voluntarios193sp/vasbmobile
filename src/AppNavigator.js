@@ -1,4 +1,4 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { useScreens } from 'react-native-screens';
 
 import Splash from "./components/Splash";
@@ -18,38 +18,58 @@ import Hospitais from "./components/Hospitais";
 
 useScreens();
 
-const MainNavigator = createStackNavigator({
-  Home: { screen: Home },
-  Splash: { screen: Splash },  
-  Cadastro: { screen: Cadastro },
-  CadastroObrigado: { screen: CadastroObrigado },
-  Incendio: { screen: EmergenciaIncendio },
-  Emergencia: { screen: EmergenciaInformar },
-  EmergenciaAtender: { screen: EmergenciaAtender },
-  PrimeirosSocorros: { screen: PrimeirosSocorros },
-  Doacao: { screen: Doacao },
-  Perfil: { screen: Perfil },
-  Informacao: { screen: Informacao },
-  Calendario: { screen: Calendario },
-  Hospitais: { screen: Hospitais }
-},
-{
-  initialRouteName: 'Home',
-  defaultNavigationOptions: {
-    headerStyle: {
-      height: 120,
-      backgroundColor: '#000',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontFamily: "Arial",
-      fontSize: 16
-    },
-  }
+const defaultNavigationOptionsStyle = {
+  headerStyle: {
+    height: 120,
+    backgroundColor: '#000',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontFamily: "Arial",
+    fontSize: 16
+  },
 }
+
+const CadastroNav = createStackNavigator({
+    Cadastro: { screen: Cadastro },
+    CadastroObrigado: { screen: CadastroObrigado },
+  },
+  {
+    initialRouteName: 'Cadastro',
+    defaultNavigationOptions: defaultNavigationOptionsStyle
+  }
+)
+
+const MainNavigator = createStackNavigator({
+    Home: { screen: Home },    
+    Incendio: { screen: EmergenciaIncendio },
+    Emergencia: { screen: EmergenciaInformar },
+    EmergenciaAtender: { screen: EmergenciaAtender },
+    PrimeirosSocorros: { screen: PrimeirosSocorros },
+    Doacao: { screen: Doacao },
+    Perfil: { screen: Perfil },
+    Informacao: { screen: Informacao },
+    Calendario: { screen: Calendario },
+    Hospitais: { screen: Hospitais }
+  },
+  {
+    initialRouteName: 'Home',
+    defaultNavigationOptions: defaultNavigationOptionsStyle
+  }
 );
 
-const AppNavigator = createAppContainer(MainNavigator);
+const AppNavigator = createSwitchNavigator({
+  SplashLoading : Splash,
+  App: MainNavigator,
+  NovoUser: CadastroNav
+});
 
-export default AppNavigator;
+const AppContainer = createAppContainer(
+  AppNavigator,
+  {
+    initialRouteName: 'SplashLoading'
+  }
+)
+
+export default AppContainer;
