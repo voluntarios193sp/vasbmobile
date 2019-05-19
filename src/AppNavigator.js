@@ -1,4 +1,5 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { useScreens } from 'react-native-screens';
 
 import Splash from "./components/Splash";
 import Home from './components/Home';
@@ -14,6 +15,8 @@ import Perfil from "./components/Perfil";
 import Informacao from "./components/Informacao";
 import Calendario from "./components/Calendario";
 import Hospitais from "./components/Hospitais";
+
+useScreens();
 
 const MainNavigator = createStackNavigator({
   Home: { screen: Home },
