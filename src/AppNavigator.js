@@ -9,6 +9,9 @@ import Cadastro from "./components/Cadastro";
 import CadastroObrigado from "./components/CadastroObrigado";
 
 import EmergenciaIncendio from "./components/EmergenciaIncendio";
+import EmergenciaAmbulancia from "./components/EmergenciaAmbulancia";
+import EmergenciaAcidente from "./components/EmergenciaAcidente";
+
 import EmergenciaInformar from "./components/EmergenciaInformar";
 import EmergenciaAtender from "./components/EmergenciaAtender";
 import PrimeirosSocorros from "./components/PrimeirosSocorros";
@@ -47,6 +50,8 @@ const CadastroNav = createStackNavigator({
 const MainNavigator = createStackNavigator({
     Home: { screen: Home },    
     Incendio: { screen: EmergenciaIncendio },
+    Acidente: { screen: EmergenciaAcidente },
+    Ambulancia: { screen: EmergenciaAmbulancia },
     Emergencia: { screen: EmergenciaInformar },
     EmergenciaAtender: { screen: EmergenciaAtender },
     PrimeirosSocorros: { screen: PrimeirosSocorros },

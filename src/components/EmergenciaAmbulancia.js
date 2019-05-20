@@ -12,7 +12,7 @@ import Geocoder from './shared/Geocoder';
 
 import CallEmergency from './shared/CallEmergency';
 
-export default class EmergenciaIncendio extends Component {
+export default class EmergenciaAmbulancia extends Component {
 
   static navigationOptions = {
     headerTitle: "CORPO DE BOMBEIROS",
@@ -112,8 +112,8 @@ export default class EmergenciaIncendio extends Component {
                         })
                       }}
                     isChecked={this.state.isHomeChecked}
-                    checkedImage={<Icon name="home" style={styles.iconIncidentChecked} />}
-                    unCheckedImage={<Icon name="home" style={styles.iconIncidentUnChecked} />}
+                    checkedImage={<Icon name="heartbeat" style={styles.iconIncidentChecked} />}
+                    unCheckedImage={<Icon name="heartbeat" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
@@ -122,8 +122,8 @@ export default class EmergenciaIncendio extends Component {
                         })
                       }}
                     isChecked={this.state.isCarChecked}
-                    checkedImage={<Icon name="car" style={styles.iconIncidentChecked} />}
-                    unCheckedImage={<Icon name="car" style={styles.iconIncidentUnChecked} />}
+                    checkedImage={<Icon name="swimmer" style={styles.iconIncidentChecked} />}
+                    unCheckedImage={<Icon name="swimmer" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
@@ -132,10 +132,10 @@ export default class EmergenciaIncendio extends Component {
                         })
                       }}
                     isChecked={this.state.isTreeChecked}
-                    checkedImage={<Icon name="tree" style={styles.iconIncidentChecked} />}
-                    unCheckedImage={<Icon name="tree" style={styles.iconIncidentUnChecked} />}
+                    checkedImage={<Icon name="drumstick-bite" style={styles.iconIncidentChecked} />}
+                    unCheckedImage={<Icon name="drumstick-bite" style={styles.iconIncidentUnChecked} />}
                 />
-                <CheckBox
+                {/* <CheckBox
                     onClick={()=>{
                         this.setState({
                           isOtherChecked:!this.state.isOtherChecked
@@ -144,7 +144,7 @@ export default class EmergenciaIncendio extends Component {
                     isChecked={this.state.isOtherChecked}
                     checkedImage={<Icon name="fire-alt" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="fire-alt" style={styles.iconIncidentUnChecked} />}
-                />
+                /> */}
               </View>
               <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                 <Icon name="user-injured" style={styles.iconIncidentChecked} />
@@ -159,8 +159,8 @@ export default class EmergenciaIncendio extends Component {
             </View>
             <View >
               <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Incendio') } }>
-                <Icon name="fire" style={styles.iconMain} />
-                <Text style={styles.textButton}>Confirmar Incêndio</Text>
+                <Icon name="ambulance" style={styles.iconMain} />
+                <Text style={styles.textButton}>Chamar Ambulância</Text>
               </TouchableOpacity>
             </View>
           </View>

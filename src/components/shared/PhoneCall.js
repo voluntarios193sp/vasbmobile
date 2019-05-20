@@ -24,7 +24,7 @@ const call = (args = {}) => {
   if (!isString(settings.number)) { return createError('number should be string') }
   if (!isBool(settings.prompt)) { return createError('prompt should be bool') }
 
-  const url = `${Platform.OS === 'ios' && settings.prompt ? 'telprompt:' : 'tel:'}${settings.number}`
+  const url = `${Platform.OS !== 'android' && settings.prompt ? 'telprompt:' : 'tel:'}${settings.number}`
 
   return openLink(url)
 }
