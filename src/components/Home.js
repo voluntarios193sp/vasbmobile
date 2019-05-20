@@ -74,7 +74,7 @@ export default class Home extends Component {
               <Icon name="fire" style={styles.iconMain} />
               <Text style={styles.textButton}>Incêndio</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Emergencia') } }>
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Ambulancia') } }>
               <Icon name="ambulance" style={styles.iconMain} />
               <Text style={styles.textButton}>Ambulância</Text>
             </TouchableOpacity>
@@ -82,7 +82,7 @@ export default class Home extends Component {
               <Icon name="heartbeat" style={styles.iconMain} />
               <Text style={styles.textButton}>Hospitais Próximos</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Emergencia') } }>
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Acidente') } }>
               <Icon name="car-crash" style={styles.iconMain} />
               <Text style={styles.textButton}>Acidente</Text>
             </TouchableOpacity>
