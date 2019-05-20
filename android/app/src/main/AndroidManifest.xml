@@ -2,7 +2,8 @@
   package="com.vasbmobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -23,7 +24,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
       <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyBsxn1zd-wbQtQ7A4Prku60zn30_Y11GoM"/>
+        android:value="AIzaSyADghHhTlMYoftUuAaFPG3GR9Kxuj2CPII"/>
     </application>
 
 </manifest>
