@@ -5,6 +5,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import LogoTitle from "./genericos/LogoTitle";
 
+import PhoneCall from './shared/PhoneCall';
+
 export default class Home extends Component {
 
   state = {
@@ -20,6 +22,18 @@ export default class Home extends Component {
     console.log('Clique recebido ' + page);
     return this.props.navigation.navigate(page, { });
   }  
+
+  call = (number) => {
+    console.log('Chamar ' + number);
+
+    const args = {
+      number: number,
+      prompt: false
+    }
+
+    PhoneCall(args)
+      .catch(console.err);
+  }
 
   async componentDidMount() {
     try {
@@ -52,7 +66,7 @@ export default class Home extends Component {
               <Icon name="first-aid" style={styles.iconMain}/>
               <Text style={styles.textButton}>Primeiros Socorros</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Incendio') } }>
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.call('193') } }>
               <Icon name="phone-volume" style={styles.iconMain} />
               <Text style={styles.textButton}>Chamar 193</Text>
             </TouchableOpacity>
@@ -124,7 +138,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around"
   },
   mainButton: {
-    backgroundColor: "red",
+    borderRadius: 10,
+    backgroundColor: "#BA1515",
     textAlign: "center",
     alignItems: "center",
     padding: 10,

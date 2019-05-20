@@ -22,7 +22,7 @@ useScreens();
 
 const defaultNavigationOptionsStyle = {
   headerStyle: {
-    height: 120,
+    height: 90,
     backgroundColor: '#000',
   },
   headerTintColor: '#fff',
