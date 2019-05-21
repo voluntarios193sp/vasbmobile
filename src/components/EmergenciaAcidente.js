@@ -23,9 +23,9 @@ export default class EmergenciaAcidente extends Component {
     userLocation: null,
     userAddress: null,
     injured: 0,
-    isHomeChecked: false,
     isCarChecked: false,
-    isTreeChecked: false,
+    isTruckChecked: false,
+    isBikeChecked: false,
   }
 
   getUserLocationHandler = () => {
@@ -108,30 +108,30 @@ export default class EmergenciaAcidente extends Component {
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                          isHomeChecked:!this.state.isHomeChecked
+                          isCarChecked:!this.state.isCarChecked
                         })
                       }}
-                    isChecked={this.state.isHomeChecked}
+                    isChecked={this.state.isCarChecked}
                     checkedImage={<Icon name="car" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="car" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                            isCarChecked:!this.state.isCarChecked
+                          isTruckChecked:!this.state.isTruckChecked
                         })
                       }}
-                    isChecked={this.state.isCarChecked}
+                    isChecked={this.state.isTruckChecked}
                     checkedImage={<Icon name="truck" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="truck" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                            isTreeChecked:!this.state.isTreeChecked
+                          isBikeChecked:!this.state.isBikeChecked
                         })
                       }}
-                    isChecked={this.state.isTreeChecked}
+                    isChecked={this.state.isBikeChecked}
                     checkedImage={<Icon name="motorcycle" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="motorcycle" style={styles.iconIncidentUnChecked} />}
                 />
