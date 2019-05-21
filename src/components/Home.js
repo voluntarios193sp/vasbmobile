@@ -76,7 +76,7 @@ export default class Home extends Component {
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Ambulancia') } }>
               <Icon name="ambulance" style={styles.iconMain} />
-              <Text style={styles.textButton}>Ambulância</Text>
+              <Text style={styles.textButton}>Resgate</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Hospitais') } }>
               <Icon name="heartbeat" style={styles.iconMain} />
@@ -90,18 +90,20 @@ export default class Home extends Component {
               <Icon name="id-card" style={styles.iconMain} />
               <Text style={styles.textButton}>Meu Perfil</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Calendario') } }>
-              <Icon name="calendar-alt" style={styles.iconMain} />
-              <Text style={styles.textButton}>Calendario</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Doacao') } }>
               <Icon name="hand-holding-usd" style={styles.iconMain} />
               <Text style={styles.textButton}>Doações</Text>
+            </TouchableOpacity>
+            {/*}
+            <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Calendario') } }>
+              <Icon name="calendar-alt" style={styles.iconMain} />
+              <Text style={styles.textButton}>Calendario</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Informacao') } }>
               <Icon name="info-circle" style={styles.iconMain} />
               <Text style={styles.textButton}>Informação</Text>
             </TouchableOpacity>
+            */}
         </View>        
       </ScrollView>
     );
