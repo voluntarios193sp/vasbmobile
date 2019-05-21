@@ -23,9 +23,9 @@ export default class EmergenciaAmbulancia extends Component {
     userLocation: null,
     userAddress: null,
     injured: 0,
-    isHomeChecked: false,
-    isCarChecked: false,
-    isTreeChecked: false,
+    isHeartChecked: false,
+    isDrownChecked: false,
+    isChockedChecked: false,
   }
 
   getUserLocationHandler = () => {
@@ -108,30 +108,30 @@ export default class EmergenciaAmbulancia extends Component {
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                          isHomeChecked:!this.state.isHomeChecked
+                          isHeartChecked:!this.state.isHeartChecked
                         })
                       }}
-                    isChecked={this.state.isHomeChecked}
+                    isChecked={this.state.isHeartChecked}
                     checkedImage={<Icon name="heartbeat" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="heartbeat" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                            isCarChecked:!this.state.isCarChecked
+                          isDrownChecked:!this.state.isDrownChecked
                         })
                       }}
-                    isChecked={this.state.isCarChecked}
+                    isChecked={this.state.isDrownChecked}
                     checkedImage={<Icon name="swimmer" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="swimmer" style={styles.iconIncidentUnChecked} />}
                 />
                 <CheckBox
                     onClick={()=>{
                         this.setState({
-                            isTreeChecked:!this.state.isTreeChecked
+                          isChockedChecked:!this.state.isChockedChecked
                         })
                       }}
-                    isChecked={this.state.isTreeChecked}
+                    isChecked={this.state.isChockedChecked}
                     checkedImage={<Icon name="drumstick-bite" style={styles.iconIncidentChecked} />}
                     unCheckedImage={<Icon name="drumstick-bite" style={styles.iconIncidentUnChecked} />}
                 />

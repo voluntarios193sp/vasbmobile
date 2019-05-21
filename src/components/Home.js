@@ -26,12 +26,7 @@ export default class Home extends Component {
   call = (number) => {
     console.log('Chamar ' + number);
 
-    const args = {
-      number: number,
-      prompt: false
-    }
-
-    PhoneCall(args)
+    PhoneCall(number)
       .catch(console.err);
   }
 
@@ -76,10 +71,10 @@ export default class Home extends Component {
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Ambulancia') } }>
               <Icon name="ambulance" style={styles.iconMain} />
-              <Text style={styles.textButton}>Ambulância</Text>
+              <Text style={styles.textButton}>Resgate</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Hospitais') } }>
-              <Icon name="heartbeat" style={styles.iconMain} />
+              <Icon name="hospital" style={styles.iconMain} />
               <Text style={styles.textButton}>Hospitais Próximos</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainButton} onPress={ () => { this.clique('Acidente') } }>

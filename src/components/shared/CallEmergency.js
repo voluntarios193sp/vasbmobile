@@ -8,12 +8,7 @@ const callEmergency = props => {
   call = (number) => {
     console.log('Chamar ' + number);
 
-    const args = {
-      number: number,
-      prompt: false
-    }
-
-    PhoneCall(args)
+    PhoneCall(number)
       .catch(console.err);
   }
 
